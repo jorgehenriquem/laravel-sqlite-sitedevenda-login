@@ -20,13 +20,14 @@ Route::get('/',['as'=>'site.home',function(){
 	return view('site.home');
 }]);
 
+Route::get('/sobre',['as'=>'site.sobre','uses'=>'Site\PaginaController@sobre'
+	]);
+
 Route::get('/login',['as'=>'site.login',function(){
 	return view('site.login');
 }]);
 
-Route::get('/sobre',['as'=>'site.sobre',function(){
-	return view('site.sobre');
-}]);
+
 
 
 Route::get('/admin/login',['as'=>'admin.login',function(){
