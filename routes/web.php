@@ -20,23 +20,30 @@ Route::get('/',['as'=>'site.home',function(){
 	return view('site.home');
 }]);
 
-Route::get('/sobre',['as'=>'site.sobre','uses'=>'Site\PaginaController@sobre'
-	]);
+Route::get('/sobre',['as'=>'site.sobre','uses'=>'Site\PaginaController@sobre']);
+	
+
+Route::post('/contato/enviar',['as'=>'site.contato.enviar','uses'=>'Site\PaginaController@enviarContato'	]);
+
+Route::get('/contato',['as'=>'site.contato','uses'=>'Site\PaginaController@contato'	]);
+
 
 Route::get('/login',['as'=>'site.login',function(){
 	return view('site.login');
 }]);
 
+Route::get('admin/paginas',['as'=>'admin.paginas', 'uses'=>'Admin\PaginaController@index']);
 
+Route::get('/admin/paginas/editar/{id}',['as'=>'admin.paginas.editar', 'uses'=>'Admin\PaginaController@editar']);
+
+Route::put('/admin/paginas/atualizar/{id}',['as'=>'admin.paginas.atualizar', 'uses'=>'Admin\PaginaController@atualizar']);
 
 
 Route::get('/admin/login',['as'=>'admin.login',function(){
 	return view('admin.login.index');
 }]);
 
-Route::get('/contato',['as'=>'site.contato',function(){
-	return view('site.contato');
-}]);
+
 
 
 Route::get('/consulta/{id}/{titulo?}',['as'=>'site.consulta',function(){

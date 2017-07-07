@@ -12,6 +12,8 @@
                 <li><a href="{{ route('admin.login') }}">Login</a></li>
                 @else
                 <li><a href="#">{{ Auth::user()->name }}</a></li>
+
+                <li><a href="{{route('admin.usuarios')}}">Usuarios<a></li>  
                 <li><a href="{{ route('admin.login.sair') }}">Sair</a></li>
                 @endif
         
@@ -25,6 +27,8 @@
                 <li><a href="{{ route('admin.login') }}">Login</a></li>
                 @else
                 <li><a href="#">{{ Auth::user()->name }}</a></li>
+
+                <li><a href="{{route('admin.usuarios')}}">Usuarios<a></li>  
                 <li><a href="{{ route('admin.login.sair') }}">Sair</a></li>
                 @endif
       </ul>
